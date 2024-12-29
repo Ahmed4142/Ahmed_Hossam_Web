@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Task_1>
+
+<div>
+    <a class="btn btn-outline-info" asp-action="Create">Create Task</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Project Id</th>
+            <th scope="col">TeamMember Id</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Id</td>
+                <td>@task.Title</td>
+                <td>@task.Description</td>
+                <td>@task.Status</td>
+                <td>@task.Priority</td>
+                <td>@task.Deadline</td>
+                <td>@task.ProjectId</td>
+                <td>@task.TeamMemberId</td>
+                <td><a class="btn btn-outline-info" asp-action="Edit" asp-controller="Tasks" asp-route-id="@task.Id">Edit</a></td>
+                <td><a class="btn btn-outline-danger" asp-action="Delete" asp-controller="Tasks" asp-route-id="@task.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

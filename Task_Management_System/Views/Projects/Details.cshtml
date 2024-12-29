@@ -1,0 +1,38 @@
+﻿@model List<Task_1>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">StartDate</th>
+            <th scope="col">EndDate</th>
+            <th scope="col">Task Title</th>
+            <th scope="col">Task Status</th>
+            <th scope="col">Task Priority</th>
+            <th scope="col">Task Deadline</th>
+            <th scope="col">TeamMember Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Project.Id</td>
+                <td>@project.Project.Name</td>
+                <td>@project.Project.Description</td>
+                <td>@project.Project.StartDate</td>
+                <td>@project.Project.EndDate</td>
+                <td>@project.Title</td>
+                <td>@project.Status</td>
+                <td>@project.Priority</td>
+                <td>@project.Deadline</td>
+                <td>@project.TeamMember.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
